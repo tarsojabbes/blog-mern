@@ -14,9 +14,9 @@ DataSchema.pre('save', async function (next) {
     if (!this.isModified("senha")) {
         return next()
     }
-    this.senha = await bcrypt.hashSync(this.senha_usuario, 10)
+    this.senha = await bcrypt.hashSync(this.senha, 10)
     next()
 })
 
-const usuarios = mongoose.Model("Usuarios", DataSchema)
+const usuarios = mongoose.model("Usuarios", DataSchema)
 module.exports = usuarios
