@@ -18,5 +18,13 @@ DataSchema.pre('save', async function (next) {
     next()
 })
 
+DataSchema.pre('findOneAndUpdate', async function (next) {
+    var password = this.getUpdate().senha + ""
+    if (password.length < 55) {
+        this.getUpdate().senha = bcrypt.hashSync(password, 10)
+    }
+    next()
+})
+
 const usuarios = mongoose.model("Usuarios", DataSchema)
 module.exports = usuarios
