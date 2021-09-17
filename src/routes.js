@@ -8,5 +8,6 @@ routes.get('/', (req, res) => {
 
 routes.get('/api/usuarios', Usuario.index)
 routes.post('/api/usuarios', Usuario.create)
+routes.delete('/api/usuarios/:_id', Usuario.delete)
 
 module.exports = routes
