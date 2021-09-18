@@ -6,6 +6,11 @@ module.exports = {
         const posts = await Post.find()
         res.json(posts)
     },
+    async details(req, res) {
+        const { _id } = req.params
+        const post = await Post.findOne({ _id })
+        res.json(post)
+    },
     async create(req, res) {
         const { titulo, conteudo } = req.body
 

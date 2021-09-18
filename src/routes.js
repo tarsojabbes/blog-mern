@@ -15,8 +15,10 @@ routes.put('/api/usuarios', Usuario.update)
 
 // Crud Posts
 routes.get('/api/posts', Post.index)
+routes.get('/api/posts.details/:_id', Post.details)
 routes.post('/api/posts', Post.create)
 routes.delete('/api/posts/:_id', Post.delete)
 routes.put('/api/posts', Post.update)
+
 
 module.exports = routes
