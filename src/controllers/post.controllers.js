@@ -1,5 +1,4 @@
 const Post = require('../models/post.model')
-const { update } = require('./usuario.controller')
 
 module.exports = {
     async index(req, res) {
