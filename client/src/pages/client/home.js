@@ -1,6 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import api from '../../services/api'
 
 export default function App() {
+
+    const [posts, setPosts] = useState([])
+
+    useEffect(
+        () => {
+            async function getPosts() {
+                const response = await api.get('/api/posts')
+                setPosts(response.data)
+            }
+            getPosts()
+        }, [])
     return (
         <>
             <div style={{ height: "100vh" }} id="landing-1">
@@ -24,7 +36,7 @@ export default function App() {
                 </div>
             </div>
             <div style={{ height: "100vh" }} id="artigos">
-                <p>Artigos</p>
+                {posts.map((post) => <div><h3>{post.titulo}</h3><br /><p>{post.conteudo}</p><br /><p>Criado em: {new Date(post.createdAt).toLocaleString('pt-br')}</p></div>)}
             </div>
         </>
     );
