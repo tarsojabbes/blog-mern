@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +13,143 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+
+
+/* HOME */
+#landing-1 {
+  /* background: rgb(14,124,217);
+  background: radial-gradient(circle, rgba(14,124,217,1) 0%, rgba(74,178,119,1) 100%); */
+  background-image: url("https://images.unsplash.com/photo-1614854262340-ab1ca7d079c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#navbar {
+  position: absolute;
+  padding: 30px 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  animation-name: aparecer-navbar;
+  animation-duration: 2000ms;
+}
+#tellme {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#links-landing {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width:fit-content;
+}
+
+#link {
+  color: #FFFFFF;
+  margin: 20px 30px;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+#link:hover {
+  animation-name: link-hover;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes link-hover {
+  100% {
+    border-bottom: 2px solid #FFF;
+  }
+}
+
+#links-landing button {
+  border: none;
+  border-style: none;
+  border-radius: 30px;
+  height: 45px;
+  width: fit-content;
+  padding: 0px 30px;
+  color: #7912AA;
+
+}
+
+.row {
+  width: 100%;
+}
+.col {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#slogan {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  color: #FFFFFF;
+  animation-name: aparecer-slogan;
+  animation-duration: 2000ms;
+}
+
+
+#frase-landing {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  text-align: right;
+  color: #FFFFFF;
+  animation-name: aparecer-frase;
+  animation-duration: 4000ms;
+}
+
+@keyframes aparecer-navbar {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes aparecer-slogan {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes aparecer-frase {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+  }
 }
