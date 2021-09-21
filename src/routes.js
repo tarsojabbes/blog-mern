@@ -9,6 +9,7 @@ routes.get('/', (req, res) => {
 
 // CRUD Usuários
 routes.get('/api/usuarios', Usuario.index)
+routes.get('/api/usuarios/:email', Usuario.getId)
 routes.post('/api/usuarios', Usuario.create)
 routes.delete('/api/usuarios/:_id', Usuario.delete)
 routes.put('/api/usuarios', Usuario.update)

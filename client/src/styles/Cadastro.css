@@ -1,15 +1,155 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {
+
+#background {
+    height: 100vh;
+    width: 100%;
     background-image: url("https://images.unsplash.com/photo-1614854262340-ab1ca7d079c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+#background p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    color: #FFFFFF;
+    animation-name: aparecer-texto-1;
+    animation-duration: 1000ms;
+}
+
+@keyframes aparecer-texto-1 {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+    }
+  } 
+
 #card-cadastro {
-    height: 100vw;
-    width: 60%;
+    height: fit-content;
+    width: 30%;
     background-color: #FFF;
+    border-radius: 10px;
+    display: flex;
+    justify-self: center;
+    animation-name: aparecer-card;
+    animation-duration: 2000ms;
+}
+
+@keyframes aparecer-card {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+    }
+  } 
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+label {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000;
 }
 
 input {
-    background-color: red;
+    width: 450px;
+    height: 30px;
+    border-radius: 30px;
+    border-style: none;
+    background: #C4C4C4;
+    padding-left: 15px;
+    margin: 10px 0px 10px 0px;
+    
 }
+
+input:focus{
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+#div-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+#form button {
+    height: 40px;
+    border-radius: 40px;
+    border-style: none;
+    width: fit-content;
+    padding: 0 60px;
+    background-image:url("https://images.unsplash.com/photo-1614854262340-ab1ca7d079c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80");
+    color: #FFF;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+#form button:hover {
+    animation-name: btn-hover;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn-hover {
+    100% {
+        transform: scale(1.09);
+    }
+}
+
+#call-login p {
+    padding-top: 30px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+    animation-name: aparecer-texto-2;
+    animation-duration: 3000ms;
+}
+
+@keyframes aparecer-texto-2 {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+    }
+  } 
+
+#call-login p a {
+    padding-top: 30px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#call-login p a:hover {
+    text-decoration: underline;
+}
+

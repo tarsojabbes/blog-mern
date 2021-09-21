@@ -31,5 +31,10 @@ module.exports = {
         return res.json({ "Usuário atualizado": user })
         // Aqui a gente tem que voltar no Model para criar o mecanismo de encriptação de senha
         // quando o cadastro for atualizado
+    },
+    async getId(req, res) {
+        const { email } = req.params
+        const user = await Usuario.findOne({ email })
+        return res.json(user)
     }
 }
