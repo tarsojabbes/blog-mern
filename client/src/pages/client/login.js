@@ -51,6 +51,11 @@ export default function Cadastro() {
 
     return (
         <div id="background">
+            <div id="div-btn-voltar">
+                <a href="javascript:history.back()">
+                    <img id="btn-voltar" src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2018/png/iconmonstr-angel-left-circle-thin.png&r=255&g=255&b=255" />
+                </a>
+            </div>
             <p>Entre no TellMe</p>
             <div id="card-cadastro">
                 <div id="form">
