@@ -1,5 +1,7 @@
 const { create, update } = require('../models/usuario.model.js')
 const Usuario = require('../models/usuario.model.js')
+const jwt = require('jsonwebtoken')
+const secret = 'mysecret'
 
 module.exports = {
     async index(req, res) {
@@ -36,5 +38,38 @@ module.exports = {
         const { email } = req.params
         const user = await Usuario.findOne({ email })
         return res.json(user)
+    },
+    async login(req, res) {
+        const { email, senha } = req.body;
+        Usuario.findOne({ email }, function (err, user) {
+            if (err) {
+                console.log(err);
+                res.status(200).json({ erro: "Erro no servidor. Por favor, tente novamente" });
+            } else if (!user) {
+                res.status(200).json({ status: 2, error: 'E-mail não encontrado no banco de dados' });
+            } else {
+                user.isCorrectPassword(senha, async function (err, same) {
+                    if (err) {
+                        res.status(200).json({ error: "Erro no servidor. Por favor, tente novamente" });
+                    } else if (!same) {
+                        res.status(200).json({ status: 2, error: "A senha não confere" });
+                    } else {
+                        const payload = { email };
+                        const token = jwt.sign(payload, secret, {
+                            expiresIn: '24h'
+                        })
+                        res.cookie('token', token, { httpOnly: true });
+                        res.status(200).json({
+                            status: 1,
+                            auth: true,
+                            token: token,
+                            id_client: user._id,
+                            user_name: user.nome,
+                        });
+                    }
+                })
+
+            }
+        })
     }
 }
