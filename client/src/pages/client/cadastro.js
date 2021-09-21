@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import api from '../../services/api'
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { login, setIdUsuario, setNomeUsuario } from '../../services/auth'
 
 export default function Cadastro() {
 
@@ -10,24 +11,52 @@ export default function Cadastro() {
     const [profissao, setProfissao] = useState('')
     const [loading, setLoading] = useState(false)
 
+    async function handleLogin() {
+        setLoading(true)
+        if (email !== '' && senha !== '') {
+            await api.post('/api/usuarios/login', { email, senha })
+                .then((res) => {
+                    if (res.status === 200) {
+                        if (res.data.status === 1) {
+                            login(res.data.token)
+                            setIdUsuario(res.data.id_client)
+                            setNomeUsuario(res.data.user_name)
+                            setTimeout(() => {
+                                async function getId(email) {
+                                    const resultado = await api.get('/api/usuarios/' + email)
+                                    window.location.href = '/perfil/' + resultado.data._id
+                                    setLoading(false)
+
+                                }
+                                getId(email)
+                                setLoading(false)
+
+                            }, 2000)
+
+                        } else if (res.data.status === 2) {
+                            alert('Email ou senha informados estão incorretos')
+                            setLoading(false)
+                        }
+                    } else {
+                        alert("Email não encontrado")
+                        setLoading(false)
+                    }
+
+                })
+        } else {
+            alert("Preencha todos os dados para efetuar login")
+            setLoading(false)
+        }
+    }
+
     async function handleCadastro() {
         setLoading(true)
         const data = { nome, email, senha, profissao }
         if (nome !== '' && email !== '' && senha !== '' && profissao !== '') {
             const response = await api.post('/api/usuarios', data)
             if (response.status === 200) {
-                setTimeout(() => {
-                    async function getId(email) {
-                        const res = await api.get('/api/usuarios/' + email)
-                        window.location.href = '/perfil/' + res.data._id
-                        setLoading(false)
 
-                    }
-                    getId(email)
-                    setLoading(false)
-
-                }, 2000)
-
+                handleLogin()
             } else {
                 alert("Não foi possível cadastrar este usuário")
                 setLoading(false)
@@ -38,6 +67,8 @@ export default function Cadastro() {
         }
 
     }
+
+
 
 
     return (
