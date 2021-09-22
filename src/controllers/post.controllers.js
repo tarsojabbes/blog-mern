@@ -26,7 +26,7 @@ module.exports = {
     async delete(req, res) {
         const { _id } = req.params
         const post = await Post.findByIdAndDelete({ _id })
-        return res.json({ "Post removido": post })
+        return res.json({ "Post removido": post, status: 200 })
     },
     async update(req, res) {
         const { _id, titulo, conteudo, criador } = req.body

@@ -1,8 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import api from '../../services/api'
 import { getNomeUsuario, getIdUsuario } from '../../services/auth'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function Perfil() {
+    const [posts, setPosts] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    const handleLimite = (texto) => {
+        let textoLimite = texto.slice(0, 250)
+        return textoLimite
+    }
+
+    async function handleDelete(id) {
+        if (window.confirm("Deseja realmente deletar este artigo?")) {
+            const response = await api.delete('/api/posts/' + id)
+            if (response.data.status === 200) {
+                alert("Artigo excluído com sucesso")
+                window.location.href = '/perfil/' + getIdUsuario()
+            } else {
+                alert("Não foi possível excluir este artigo")
+            }
+        }
+    }
+
+    useEffect(() => {
+        async function getPostsUsuario() {
+            const response = await api.get('/api/posts/' + getIdUsuario())
+            setPosts(response.data)
+            setLoading(false)
+        }
+        setTimeout(
+            () => getPostsUsuario(), 1500
+        )
+
+    }, [])
     return (
         <>
             <nav>
@@ -19,17 +51,21 @@ export default function Perfil() {
                 <h2>Aqui estão os seus artigos</h2>
                 <div id="grid-cards">
                     {/* O map começa a partir daqui */}
-                    <div id="card-artigo-perfil">
-                        <div id="main-artigo">
-                            <h3 id='titulo-artigo'>Titulo</h3><br />
-                            <p id='conteudo-artigo'>Conteudo</p><br />
-                        </div>
-                        <div id='div-button'>
-                            <a href={'/artigo/'}><button>Ler</button></a>
-                            <a href={'/artigo/'}><button>Deleter</button></a>
-                            <a href={'/artigo/'}><button>Editar</button></a>
-                        </div>
-                    </div>
+                    {loading ? <div style={{ position: "absolute", width: "100vw", height: "80vh", display: "flex", justifyContent: "center", alignItems: "center" }}><CircularProgress /></div> :
+                        posts.map((post) => (
+                            <div id="card-artigo-perfil">
+                                <div id="main-artigo">
+                                    <h3 id='titulo-artigo'>{post.titulo}</h3><br />
+                                    <p id='conteudo-artigo'>{handleLimite(post.conteudo)}...</p><br />
+                                </div>
+                                <div id='div-button'>
+                                    <a href={'/artigo/' + post._id}><button>Ler</button></a>
+                                    <a ><button onClick={() => handleDelete(post._id)}>Deleter</button></a>
+                                    <a ><button>Editar</button></a>
+                                </div>
+                            </div>
+                        ))}
+
                 </div>
             </main>
         </>
