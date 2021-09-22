@@ -33,5 +33,10 @@ module.exports = {
         const data = { _id, titulo, conteudo, criador }
         const post = await Post.findOneAndUpdate({ _id }, data, { new: true })
         return res.json({ "Post atualizado": post })
+    },
+    async getPostsByIdUsuario(req, res) {
+        const { criador } = req.params
+        const posts = await Post.find({ criador }).sort({ createdAt: -1 })
+        res.json(posts)
     }
 }

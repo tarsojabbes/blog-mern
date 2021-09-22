@@ -18,6 +18,7 @@ export default function Perfil() {
             <main>
                 <h2>Aqui estão os seus artigos</h2>
                 <div id="grid-cards">
+                    {/* O map começa a partir daqui */}
                     <div id="card-artigo-perfil">
                         <div id="main-artigo">
                             <h3 id='titulo-artigo'>Titulo</h3><br />
