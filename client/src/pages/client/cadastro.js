@@ -75,7 +75,7 @@ export default function Cadastro() {
         <div id="background">
             <div id="div-btn-voltar">
                 <a href="javascript:history.back()">
-                    <img id="btn-voltar" src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2018/png/iconmonstr-angel-left-circle-thin.png&r=255&g=255&b=255" />
+                    <img id="btn-voltar" alt="botão voltar" src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2018/png/iconmonstr-angel-left-circle-thin.png&r=255&g=255&b=255" />
                 </a>
             </div>
             <p>Cadastre-se no TellMe</p>

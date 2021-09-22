@@ -50,7 +50,6 @@ export default function App() {
                 <p id="h1-artigos">Artigos</p>
                 <div id="grid-cards">
                     {loading ? <div style={{ position: "absolute", width: "100vw", height: "80vh", display: "flex", justifyContent: "center", alignItems: "center" }}><CircularProgress /></div> : posts.map((post) => (
-
                         <div id="card-artigo">
                             <div id="main-artigo">
                                 <h3 id='titulo-artigo'>{post.titulo}</h3><br />

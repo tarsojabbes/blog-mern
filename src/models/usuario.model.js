@@ -26,6 +26,14 @@ DataSchema.pre('findOneAndUpdate', async function (next) {
     next()
 })
 
+DataSchema.pre('findOneAndUpdate', async function (next) {
+    var password = this.getUpdate().senha_usuario + ""
+    if (password.length < 55) {
+        this.getUpdate().senha_usuario = bcrypt.hashSync(password, 10)
+    }
+    next()
+})
+
 DataSchema.methods.isCorrectPassword = function (password, callback) {
     var senha = this.senha
     bcrypt.compare(password, senha, function (err, same) {

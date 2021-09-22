@@ -60,8 +60,8 @@ export default function Perfil() {
                                 </div>
                                 <div id='div-button'>
                                     <a href={'/artigo/' + post._id}><button>Ler</button></a>
-                                    <a ><button onClick={() => handleDelete(post._id)}>Deleter</button></a>
-                                    <a ><button>Editar</button></a>
+                                    <button onClick={() => handleDelete(post._id)}>Deleter</button>
+                                    <button>Editar</button>
                                 </div>
                             </div>
                         ))}

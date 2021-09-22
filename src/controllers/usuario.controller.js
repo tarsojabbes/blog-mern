@@ -71,5 +71,14 @@ module.exports = {
 
             }
         })
+    },
+    async getUser(req, res) {
+        const { _id } = req.params
+        const user = await Usuario.findById({ _id })
+        if (!user) {
+            res.json("Usuário não encontrado")
+        } else {
+            res.json(user)
+        }
     }
 }
