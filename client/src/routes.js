@@ -18,9 +18,9 @@ export default function Routes() {
                     <Route path='/artigo/:_id' exact component={Artigo} />
 
                     <Route path='/perfil/:_id' exact component={Perfil} />
-                    <Route path='/perfil/artigo/atualizar/:idArtigo' exact component={AtualizarArtigo} />
-                    <Route path='/perfil/atualizar/:idUsuario' exact component={AtualizarPerfil} />
-                    <Route path='/perfil/escrever' exact component={Escrever} />
+                    <Route path='/perfil/:_id/artigo/atualizar/:idArtigo' exact component={AtualizarArtigo} />
+                    <Route path='/perfil/:_id/atualizar/' exact component={AtualizarPerfil} />
+                    <Route path='/perfil/:_id/escrever' exact component={Escrever} />
 
                     <Route path='/cadastrar' exact component={Cadastro} />
                     <Route path='/login' exact component={Login} />
