@@ -174,10 +174,10 @@ code {
 #grid-cards {
   width: 100%;
   display: inline-grid;
-  grid-template-columns: 350px 350px 350px 350px;
+  grid-template-columns: 700px 700px;
   grid-template-rows: 300px;
   grid-auto-rows: 300px;
-  grid-auto-columns: 400px;
+  grid-auto-columns: 700px;
   grid-auto-flow: row;
   gap: 100px;
   justify-content: center;

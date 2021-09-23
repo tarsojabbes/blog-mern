@@ -8,9 +8,11 @@ export default function App() {
     const [loading, setLoading] = useState(true)
 
     const handleLimite = (texto) => {
-        let textoLimite = texto.slice(0, 250)
+        let textoLimite = texto.slice(0, 500)
         return textoLimite
     }
+
+
 
     useEffect(
         () => {

@@ -16,7 +16,6 @@ export default function Perfil() {
         if (window.confirm("Deseja realmente deletar este artigo?")) {
             const response = await api.delete('/api/posts/' + id)
             if (response.data.status === 200) {
-                alert("Artigo excluído com sucesso")
                 window.location.href = '/perfil/' + getIdUsuario()
             } else {
                 alert("Não foi possível excluir este artigo")

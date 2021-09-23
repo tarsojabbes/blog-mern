@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../src/styles/Home.css';
 import '../src/styles/Form.css';
-import '../src//styles/Perfil.css'
+import '../src/styles/Perfil.css'
+import '../src/styles/Artigo.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
