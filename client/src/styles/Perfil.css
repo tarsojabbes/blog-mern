@@ -5,11 +5,11 @@ nav {
     align-items: center;
     position: absolute;
     padding: 30px 60px;
-    animation-name: aparecer-navbar;
+    animation-name: aparecer-navbar-perfil;
     animation-duration: 1000ms;
 }
 
-@keyframes aparecer-navbar {
+@keyframes aparecer-navbar-perfil {
     0% {
       opacity: 0;
       transform: translateY(50px);

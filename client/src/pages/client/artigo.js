@@ -20,10 +20,26 @@ export default function Artigo() {
 
     return (
         <>
-            <h1>{post.titulo}</h1>
-            <p>{criador}</p>
-            <p>{post.createdAt}</p>
-            <p>{post.conteudo}</p>
+            <div id="navbar" class="navbar-artigo">
+                <div id="tellme">
+                    <p>TellMe</p>
+                </div>
+                <div id="links-landing">
+                    <a href="/#artigos" id="link">Artigos</a>
+                    <a href="/login" id="link">Entrar</a>
+                    <a href="/cadastrar"><button id="cadastro">Cadastre-se</button></a>
+                </div>
+            </div>
+            <main id="main-page-artigo">
+                <header id="header">
+                    <h1 id="titulo">{post.titulo}</h1>
+                    <p id="criador">Este artigo foi escrito por: {criador}</p>
+                    <p id="data">Criado em: {new Date(post.createdAt).toLocaleString('pt-br')}</p>
+                </header>
+                <article id="div">
+                    <p id="conteudo">{post.conteudo}</p>
+                </article>
+            </main>
         </>
     )
 }

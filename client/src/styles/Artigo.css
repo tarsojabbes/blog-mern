@@ -1,0 +1,90 @@
+.navbar-artigo {
+    background-color: #0E7CD9;
+    height: 70px;
+    animation-name: aparecer-navbar-artigo;
+    animation-duration: 1000ms;
+}
+
+
+@keyframes aparecer-navbar-artigo {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+.navbar-artigo #cadastro {
+    color:#0E7CD9
+}
+
+#main-page-artigo {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+
+}
+
+#header {
+    width: 45%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    animation-name: aparecer-header;
+    animation-duration: 1000ms;
+}
+
+@keyframes aparecer-header {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+#div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div #conteudo {
+    width: 45%;
+    text-align: justify;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight:normal;
+    font-size: 18px;
+    color: #000;
+    line-height: 18px;
+    animation-name: aparecer-header;
+    animation-duration: 3000ms;
+    
+    
+}
+
+#header #titulo{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    color: #0E7CD9;
+    text-align: justify;
+    padding-bottom: 30px;
+}
+
+#header #criador, #header #data {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight:600;
+    font-size: 18px;
+    color: #000;
+    height: fit-content;
+    line-height: 20px;
+}
