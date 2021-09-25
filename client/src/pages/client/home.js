@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import api from '../../services/api'
+import { getToken, getIdUsuario } from '../../services/auth'
 
 export default function App() {
 
@@ -11,8 +12,7 @@ export default function App() {
         let textoLimite = texto.slice(0, 500)
         return textoLimite
     }
-
-
+    const token = getToken()
 
     useEffect(
         () => {
@@ -35,7 +35,7 @@ export default function App() {
                     </div>
                     <div id="links-landing">
                         <a href="#artigos" id="link">Artigos</a>
-                        <a href="/login" id="link">Entrar</a>
+                        <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">Entrar</a>
                         <a href="/cadastrar"><button>Cadastre-se</button></a>
                     </div>
                 </div>

@@ -41,6 +41,7 @@ export default function Cadastro() {
                     }
 
                 })
+
         } else {
             alert("Preencha todos os dados para efetuar login")
             setLoading(false)
