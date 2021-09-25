@@ -7,6 +7,7 @@ import Escrever from './pages/client/escrever'
 import Login from './pages/client/login'
 import Perfil from './pages/client/perfil'
 import Home from './pages/client/home'
+import PrivateRoute from '../src/services/wAuth'
 
 export default function Routes() {
     return (
@@ -17,10 +18,10 @@ export default function Routes() {
 
                     <Route path='/artigo/:_id' exact component={Artigo} />
 
-                    <Route path='/perfil/:_id' exact component={Perfil} />
-                    <Route path='/perfil/:_id/artigo/atualizar/:idArtigo' exact component={AtualizarArtigo} />
-                    <Route path='/perfil/:_id/atualizar/' exact component={AtualizarPerfil} />
-                    <Route path='/perfil/:_id/escrever' exact component={Escrever} />
+                    <PrivateRoute path='/perfil/:_id' exact component={Perfil} />
+                    <PrivateRoute path='/perfil/:_id/artigo/atualizar/:idArtigo' exact component={AtualizarArtigo} />
+                    <PrivateRoute path='/perfil/:_id/atualizar/' exact component={AtualizarPerfil} />
+                    <PrivateRoute path='/perfil/:_id/escrever' exact component={Escrever} />
 
                     <Route path='/cadastrar' exact component={Cadastro} />
                     <Route path='/login' exact component={Login} />
