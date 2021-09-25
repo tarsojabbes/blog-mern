@@ -28,7 +28,7 @@ header {
     color: #0E7CD9;
 }
 
-#links-perfil a {
+#links-perfil a{
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
@@ -47,6 +47,13 @@ header {
     animation-name: link-hover;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
+  }
+
+  #links-perfil a button {
+    background-color: transparent;
+    border-style: none;
+    width: fit-content;
+    color:#0E7CD9
   }
   
   @keyframes link-hover {

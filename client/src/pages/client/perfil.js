@@ -61,7 +61,7 @@ export default function Perfil() {
             <main>
                 <h2>Aqui estão os seus artigos</h2>
                 <div id="grid-cards">
-                    {/* O map começa a partir daqui */}
+
                     {loading ? <div style={{ position: "absolute", width: "100vw", height: "80vh", display: "flex", justifyContent: "center", alignItems: "center" }}><CircularProgress /></div> :
                         posts.map((post) => (
                             <div id="card-artigo-perfil">
