@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import api from '../../services/api'
-import { getNomeUsuario, getIdUsuario } from '../../services/auth'
+import { getNomeUsuario, getIdUsuario, getToken, logout } from '../../services/auth'
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function Perfil() {
@@ -19,6 +19,18 @@ export default function Perfil() {
                 window.location.href = '/perfil/' + getIdUsuario()
             } else {
                 alert("Não foi possível excluir este artigo")
+            }
+        }
+    }
+
+    async function confirmSair() {
+        if (window.confirm('Deseja realmente sair do sistema?')) {
+            const response = await api.get('/api/usuarios/destroyToken', { headers: { token: getToken() } })
+            if (response.status === 200) {
+                logout()
+                window.location.href = "/login"
+            } else {
+                alert("Não foi possível fazer logout")
             }
         }
     }
@@ -43,7 +55,7 @@ export default function Perfil() {
                 <div id="links-perfil">
                     <a href={'/perfil/' + getIdUsuario() + '/atualizar'}>Editar perfil</a>
                     <a href={'/perfil/' + getIdUsuario() + '/escrever'}>Escrever</a>
-                    <a>Sair</a>
+                    <a><button onClick={confirmSair}>Sair</button></a>
                 </div>
             </nav>
             <main>

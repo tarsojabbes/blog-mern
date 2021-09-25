@@ -1,7 +1,7 @@
 const { create, update } = require('../models/usuario.model.js')
 const Usuario = require('../models/usuario.model.js')
 const jwt = require('jsonwebtoken')
-const secret = 'mysecret'
+const secret = "secret"
 
 module.exports = {
     async index(req, res) {
@@ -82,17 +82,26 @@ module.exports = {
         }
     },
     async token(req, res) {
-        const token = req.body.token || req.query.token || req.cookie || req.header['x-access-token']
+        const token = req.body.token || req.query.token || req.cookies.token || req.headers['x-access-token']
         if (!token) {
-            res.json({ status: 401, msg: "Não autorizado: Token inexistente" })
+            return res.json({ status: 401, msg: "Token inexistente" })
         } else {
             jwt.verify(token, secret, function (err, decoded) {
                 if (err) {
-                    res.json({ status: 401, mdg: "Não autorizado: Token Inválido" })
+                    return res.json({ status: 401, msg: "Token inválido" })
                 } else {
-                    res.json({ status: 200 })
+                    return res.json({ status: 200, token: token })
                 }
             })
         }
+    },
+    async destroyToken(req, res) {
+        const token = req.headers.token
+        if (token) {
+            res.cookie('token', null, { httpOnly: true })
+        } else {
+            res.status(401).send("Logout não autorizado!")
+        }
+        res.send('Sessão finalizada')
     }
 }

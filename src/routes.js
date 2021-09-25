@@ -15,7 +15,8 @@ routes.post('/api/usuarios', Usuario.create)
 routes.delete('/api/usuarios/:_id', Usuario.delete)
 routes.put('/api/usuarios', Usuario.update)
 routes.post('/api/usuarios/login', Usuario.login)
-routes.get('/api/usuaruis/checktoken', Usuario.token)
+routes.get('/api/usuarios/checktoken', Usuario.token)
+routes.get('/api/usuarios/destroytoken', Usuario.destroyToken)
 
 // Crud Posts
 routes.get('/api/posts', Post.index)
