@@ -22,7 +22,7 @@ export default function Artigo() {
         <>
             <div id="navbar" class="navbar-artigo">
                 <div id="tellme">
-                    <p>TellMe</p>
+                    <a href="/"><p>TellMe</p></a>
                 </div>
                 <div id="links-landing">
                     <a href="/#artigos" id="link">Artigos</a>

@@ -80,5 +80,19 @@ module.exports = {
         } else {
             res.json(user)
         }
+    },
+    async token(req, res) {
+        const token = req.body.token || req.query.token || req.cookie || req.header['x-access-token']
+        if (!token) {
+            res.json({ status: 401, msg: "Não autorizado: Token inexistente" })
+        } else {
+            jwt.verify(token, secret, function (err, decoded) {
+                if (err) {
+                    res.json({ status: 401, mdg: "Não autorizado: Token Inválido" })
+                } else {
+                    res.json({ status: 200 })
+                }
+            })
+        }
     }
 }

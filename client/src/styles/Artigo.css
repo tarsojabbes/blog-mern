@@ -5,6 +5,11 @@
     animation-duration: 1000ms;
 }
 
+.navbar-artigo a {
+    text-decoration: none;
+    color: #FFF
+}
+
 
 @keyframes aparecer-navbar-artigo {
     0% {
