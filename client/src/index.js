@@ -4,6 +4,7 @@ import '../src/styles/Home.css';
 import '../src/styles/Form.css';
 import '../src/styles/Perfil.css'
 import '../src/styles/Artigo.css'
+import '../src/styles/Escrever.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

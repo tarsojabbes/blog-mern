@@ -1,6 +1,4 @@
-import { Hidden } from '@material-ui/core'
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import api from '../../services/api'
 import { getToken, getIdUsuario, getNomeUsuario } from '../../services/auth'
 
@@ -42,12 +40,12 @@ export default function Artigo() {
             </div>
             <main id="main-page-artigo">
                 <header id="header-escrita-artigo">
-                    <input value={titulo} name="titulo" placeholder="Título do artigo" onChange={(e) => setTitulo(e.target.value)} />
-                    <input disabled="true" placeholder={"Escrito por: " + getNomeUsuario()} />
+                    <input id="titulo-escrita" value={titulo} name="titulo" placeholder="Título do artigo" onChange={(e) => setTitulo(e.target.value)} />
+                    <p id="criador">Escrito por: <input disabled="true" id="criador" placeholder={getNomeUsuario()} /></p>
 
                 </header>
                 <article id="div-escrita-artigo">
-                    <input value={conteudo} name="conteudo" placeholder="Conteúdo do artigo" onChange={(e) => setConteudo(e.target.value)} />
+                    <textarea value={conteudo} name="conteudo" placeholder="Conteúdo do artigo" onChange={(e) => setConteudo(e.target.value)} />
                 </article>
                 <button onClick={handleSubmit}>Enviar</button>
             </main>

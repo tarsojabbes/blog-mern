@@ -1,0 +1,124 @@
+#main-page-artigo {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+
+}
+
+#header-escrita-artigo {
+    width: 45%;
+    padding-top: 50px;
+    animation-name: aparecer-header;
+    animation-duration: 1000ms;
+}
+
+#header-escrita-artigo #titulo-escrita {
+    width: 100%;
+    background-color: #FFF;
+    height: 100px;
+    border: 2px solid #88898a;
+    border-radius: 10px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    color: #0E7CD9;
+    text-align: justify;
+    
+}
+
+@keyframes aparecer-header {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+#div-escrita-artigo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div-escrita-artigo #conteudo {
+    width: 45%;
+    text-align: justify;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight:normal;
+    font-size: 18px;
+    color: #000;
+    line-height: 18px;
+    animation-name: aparecer-header;
+    animation-duration: 3000ms;
+    
+    
+}
+
+
+#header-escrita-artigo #criador {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight:600;
+    font-size: 18px;
+    color: #000;
+    height: fit-content;
+    line-height: 20px;
+}
+
+#div-escrita-artigo textarea {
+    width: 45vw;
+    min-height: 45vh;
+    border: 2px solid #88898a;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: justify;
+    animation-name: aparecer-textarea;
+    animation-duration: 1500ms;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight:normal;
+    font-size: 18px;
+    color: #000;
+    line-height: 18px;
+}
+@keyframes aparecer-textarea {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+#main-page-artigo button {
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 50px;
+    background-color: #0E7CD9;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight:normal;
+    font-size: 18px;
+    color: #FFF;
+    animation-name: aparecer-button;
+    animation-duration: 2000ms;
+}
+@keyframes aparecer-button {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
