@@ -1,7 +1,56 @@
-import React from 'react'
+import { Hidden } from '@material-ui/core'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import api from '../../services/api'
+import { getToken, getIdUsuario, getNomeUsuario } from '../../services/auth'
 
-export default function Escrever() {
+export default function Artigo() {
+
+    const [titulo, setTitulo] = useState('')
+    const [conteudo, setConteudo] = useState('')
+    const [criador, setCriador] = useState('')
+    const token = getToken()
+
+    useEffect(() => {
+        setCriador(getIdUsuario())
+    }, [])
+
+    async function handleSubmit() {
+        if (titulo !== '' && conteudo !== '') {
+            const response = await api.post('api/posts', { titulo, conteudo, criador })
+            if (response.status === 200) {
+                window.location.href = '/perfil/' + getIdUsuario()
+            } else {
+                alert("Não foi possível enviar o seu artigo")
+            }
+        } else {
+            alert("Preencha todos os campos para enviar o seu artigo")
+        }
+
+
+    }
+
     return (
-        <h1>Página de escrita de artigo</h1>
+        <>
+            <div id="navbar" class="navbar-artigo">
+                <div id="tellme">
+                    <a href="/"><p>TellMe</p></a>
+                </div>
+                <div id="links-landing">
+                    <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">{token == '' || token == null || token == undefined ? 'Login' : 'Ir para o perfil'}</a>
+                </div>
+            </div>
+            <main id="main-page-artigo">
+                <header id="header-escrita-artigo">
+                    <input value={titulo} name="titulo" placeholder="Título do artigo" onChange={(e) => setTitulo(e.target.value)} />
+                    <input disabled="true" placeholder={"Escrito por: " + getNomeUsuario()} />
+
+                </header>
+                <article id="div-escrita-artigo">
+                    <input value={conteudo} name="conteudo" placeholder="Conteúdo do artigo" onChange={(e) => setConteudo(e.target.value)} />
+                </article>
+                <button onClick={handleSubmit}>Enviar</button>
+            </main>
+        </>
     )
 }
