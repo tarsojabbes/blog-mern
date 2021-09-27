@@ -54,13 +54,14 @@
   }
 
 #div {
+  width: 45vw;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 #div #conteudo {
-    width: 45%;
+    width: 100%;
     text-align: justify;
     font-family: Montserrat;
     font-style: normal;
@@ -70,6 +71,7 @@
     line-height: 18px;
     animation-name: aparecer-header;
     animation-duration: 3000ms;
+    line-height: 2rem;
     
     
 }
