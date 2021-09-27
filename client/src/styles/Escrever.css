@@ -112,6 +112,7 @@
     color: #FFF;
     animation-name: aparecer-button;
     animation-duration: 2000ms;
+    line-height: 2rem;
 }
 @keyframes aparecer-button {
     0% {
