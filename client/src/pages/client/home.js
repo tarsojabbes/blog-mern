@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import api from '../../services/api'
 import { getToken, getIdUsuario } from '../../services/auth'
@@ -15,6 +15,17 @@ export default function App() {
         return textoLimite
     }
     const token = getToken();
+
+    useLayoutEffect(() => {
+        function updateSize() {
+            if (window.screen.width > 1200) {
+                setVisibility(false)
+            }
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+
+    })
 
     useEffect(
         () => {
