@@ -243,6 +243,68 @@ code {
 
 }
 
+#dropdown {
+  display: none;
+  position: relative;
+  right: 10px;
+}
+
+#links-landing-dropdown {
+  width: 100vw;
+  height: 200px;
+  background: #FFF;
+  position:absolute;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  animation-name: aparecer-dropdown;
+  animation-duration: 500ms;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+@keyframes aparecer-dropdown {
+  0% {
+    opacity: 0;
+    height: 0px;
+  }
+  100% {
+    opacity: 1;
+    height: 200px;
+  }
+}
+
+#links-landing-dropdown #link {
+  color:#7912AA;
+  width: 100%;
+  font-family: Montserrat;
+  font-size: 14px;
+  width: fit-content;
+}
+
+#links-landing-dropdown button {
+  background: none;
+  border: none;
+  color:#7912AA;
+  width: 100%;
+  font-family: Montserrat;
+  font-size: 14px;
+  margin: 20px 12px;
+}
+
+
+#dropdown button {
+  border: none;
+  background: transparent;
+}
+
+#dropdown button img {
+  height: 32px;
+}
+
 @media (max-width: 1200px) {
   #grid-cards {
     width: 100%;
@@ -327,4 +389,12 @@ code {
     min-height: 35px;
     font-size: 12px;
   }
+
+  #dropdown {
+    display: block;
+  }
+
+
+
+
 }

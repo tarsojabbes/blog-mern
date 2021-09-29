@@ -2,17 +2,19 @@ import React, { useState, useEffect } from 'react'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import api from '../../services/api'
 import { getToken, getIdUsuario } from '../../services/auth'
+import { style } from '@material-ui/system';
 
 export default function App() {
 
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(true)
+    const [visibility, setVisibility] = useState(false)
 
     const handleLimite = (texto) => {
         let textoLimite = texto.slice(0, 500)
         return textoLimite
     }
-    const token = getToken()
+    const token = getToken();
 
     useEffect(
         () => {
@@ -38,7 +40,18 @@ export default function App() {
                         <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">Entrar</a>
                         <a href="/cadastrar"><button>Cadastre-se</button></a>
                     </div>
+                    <div id="dropdown">
+                        <button onClick={() => setVisibility(!visibility)}><img src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2013/png/iconmonstr-menu-1.png&r=255&g=255&b=255" alt="menu" /></button>
+                    </div>
+
                 </div>
+                {visibility ? (
+                    <div id="links-landing-dropdown">
+                        <a href="#artigos" id="link">Artigos</a>
+                        <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">Entrar</a>
+                        <a href="/cadastrar"><button>Cadastre-se</button></a>
+                    </div>
+                ) : ""}
                 <div className="container container-fluid">
                     <div className="row" id="main-landing">
                         <div className="col">
@@ -67,6 +80,7 @@ export default function App() {
                     )}
                 </div>
             </div>
+
         </>
     );
 }
