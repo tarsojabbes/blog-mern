@@ -16,16 +16,16 @@ export default function App() {
     }
     const token = getToken();
 
-    useLayoutEffect(() => {
-        function updateSize() {
-            if (window.screen.width > 1200) {
-                setVisibility(false)
-            }
-        }
-        window.addEventListener('resize', updateSize);
-        updateSize();
+    // useLayoutEffect(() => {
+    //     function updateSize() {
+    //         if (window.screen.width > 1200) {
+    //             setVisibility(false)
+    //         }
+    //     }
+    //     window.addEventListener('resize', updateSize);
+    //     updateSize();
 
-    })
+    // })
 
     useEffect(
         () => {
@@ -37,6 +37,14 @@ export default function App() {
             setTimeout(
                 () => getPosts(), 1500
             )
+
+            function updateSize() {
+                if (window.screen.width > 1200) {
+                    setVisibility(false)
+                }
+            }
+            window.addEventListener('resize', updateSize);
+            updateSize();
 
         }, [])
     return (
