@@ -87,7 +87,7 @@ code {
 
 @keyframes link-hover {
   100% {
-    border-bottom: 2px solid #FFF;
+    border-bottom: 2px solid rgb(155, 127, 127);
   }
 }
 
@@ -189,7 +189,7 @@ code {
   grid-auto-rows: 300px;
   grid-auto-columns: 700px;
   grid-auto-flow: row;
-  gap: 100px;
+  gap: 50px;
   justify-content: center;
 }
 
@@ -203,6 +203,8 @@ code {
   flex-direction: column;
   justify-content:space-around;
   align-items: flex-start;
+  min-height: 35vh;
+  max-height: fit-content;
 }
 
 #titulo-artigo{
@@ -250,7 +252,7 @@ code {
 }
 
 #links-landing-dropdown {
-  width: 100vw;
+  width: 100%;
   height: 200px;
   background: #FFF;
   position:absolute;
@@ -285,14 +287,25 @@ code {
   width: fit-content;
 }
 
+#links-landing-dropdown #link:hover{
+  animation-name: link-dropdown-hover;
+  animation-duration: 500ms;
+}
+
+@keyframes link-dropdown-hover {
+  100% {
+    border-bottom: 2px solid #7912AA;
+  }
+}
 #links-landing-dropdown button {
+  width: fit-content;
   background: none;
   border: none;
   color:#7912AA;
   width: 100%;
   font-family: Montserrat;
   font-size: 14px;
-  margin: 20px 12px;
+  padding: 0px;
 }
 
 

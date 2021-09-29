@@ -26,7 +26,6 @@ export default function App() {
     //     updateSize();
 
     // })
-
     useEffect(
         () => {
             async function getPosts() {
@@ -45,6 +44,8 @@ export default function App() {
             }
             window.addEventListener('resize', updateSize);
             updateSize();
+
+
 
         }, [])
     return (
@@ -68,7 +69,7 @@ export default function App() {
                     <div id="links-landing-dropdown">
                         <a href="#artigos" id="link">Artigos</a>
                         <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">Entrar</a>
-                        <a href="/cadastrar"><button>Cadastre-se</button></a>
+                        <a href="/cadastrar" id="link"><button>Cadastre-se</button></a>
                     </div>
                 ) : ""}
                 <div className="container container-fluid">
