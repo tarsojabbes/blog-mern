@@ -54,6 +54,7 @@
   } 
 
 #form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -70,7 +71,7 @@ label {
 }
 
 input {
-    width: 500px;
+    width: 100%;
     height: 30px;
     border-radius: 30px;
     border-style: none;
