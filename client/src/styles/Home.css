@@ -280,7 +280,7 @@ code {
 }
 
 #links-landing-dropdown #link {
-  color:#7912AA;
+  color:#0E7CD9;
   width: 100%;
   font-family: Montserrat;
   font-size: 14px;
@@ -294,14 +294,14 @@ code {
 
 @keyframes link-dropdown-hover {
   100% {
-    border-bottom: 2px solid #7912AA;
+    border-bottom: 2px solid #0E7CD9;
   }
 }
 #links-landing-dropdown button {
   width: fit-content;
   background: none;
   border: none;
-  color:#7912AA;
+  color:#0E7CD9;
   width: 100%;
   font-family: Montserrat;
   font-size: 14px;
