@@ -25,7 +25,7 @@ code {
 #landing-1 {
   /* background: rgb(14,124,217);
   background: radial-gradient(circle, rgba(14,124,217,1) 0%, rgba(74,178,119,1) 100%); */
-  background-image: url("https://images.unsplash.com/photo-1614854262340-ab1ca7d079c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80");
+  background-color: #0E7CD9;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -98,7 +98,7 @@ code {
   height: 45px;
   width: fit-content;
   padding: 0px 30px;
-  color: #7912AA;
+  color: #0E7CD9;
 
 }
 
@@ -176,7 +176,7 @@ code {
   font-style: normal;
   font-weight: 900;
   font-size: 36px;
-  color: #0001E0;
+  color: #0E7CD9;
 }
 
 #grid-cards {
@@ -194,7 +194,7 @@ code {
 }
 
 #card-artigo{
-  background-image: url("https://images.unsplash.com/photo-1614854262340-ab1ca7d079c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80");
+  background-color: #0E7CD9;
   background-size: cover;
   background-attachment: fixed;
   border-radius: 13px;
