@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import api from '../../services/api'
 import { getToken, getIdUsuario } from '../../services/auth'
-import { style } from '@material-ui/system';
 
 export default function App() {
 
@@ -16,16 +15,6 @@ export default function App() {
     }
     const token = getToken();
 
-    // useLayoutEffect(() => {
-    //     function updateSize() {
-    //         if (window.screen.width > 1200) {
-    //             setVisibility(false)
-    //         }
-    //     }
-    //     window.addEventListener('resize', updateSize);
-    //     updateSize();
-
-    // })
     useEffect(
         () => {
             async function getPosts() {

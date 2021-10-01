@@ -63,8 +63,8 @@ export default function Perfil() {
                 <div id="grid-cards">
 
                     {loading ? <div style={{ position: "absolute", width: "100vw", height: "80vh", display: "flex", justifyContent: "center", alignItems: "center" }}><CircularProgress /></div> :
-                        posts.map((post) => (
-                            <div id="card-artigo-perfil">
+                        posts.map((post, id) => (
+                            <div id="card-artigo-perfil" key={id}>
                                 <div id="main-artigo">
                                     <h3 id='titulo-artigo'>{post.titulo}</h3><br />
                                     <p id='conteudo-artigo'>{handleLimite(post.conteudo)}...</p><br />

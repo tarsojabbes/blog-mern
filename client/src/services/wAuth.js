@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import api from './api'
-import { login, logout, getToken } from './auth'
+import { logout, getToken } from './auth'
 import { Route, Redirect } from 'react-router-dom'
 import CircularProgress from '@material-ui/core/CircularProgress';
 

@@ -21,7 +21,7 @@ export default function Artigo() {
         }
         getPost()
         setCriador(getIdUsuario())
-    }, [])
+    }, [idArtigo])
 
     async function handleUpdate() {
         if (titulo !== '' && conteudo !== '') {
@@ -45,7 +45,7 @@ export default function Artigo() {
                     <a href="/"><p>TellMe</p></a>
                 </div>
                 <div id="links-landing">
-                    <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">{token == '' || token == null || token == undefined ? 'Login' : 'Ir para o perfil'}</a>
+                    <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">{token === '' || token === null || token === undefined ? 'Login' : 'Ir para o perfil'}</a>
                 </div>
             </div>
             <main id="main-page-artigo">

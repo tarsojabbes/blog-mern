@@ -1,4 +1,3 @@
-import { Hidden } from '@material-ui/core'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import api from '../../services/api'
@@ -20,7 +19,7 @@ export default function Artigo() {
             setCriador(user.data.nome)
         }
         getPost()
-    }, [])
+    }, [_id])
 
     return (
         <>
@@ -30,8 +29,8 @@ export default function Artigo() {
                 </div>
                 <div id="links-landing">
                     <a href="/#artigos" id="link">Artigos</a>
-                    <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">{token == '' || token == null || token == undefined ? 'Login' : 'Ir para o perfil'}</a>
-                    <a href="/cadastrar" style={token == '' || token == null || token == undefined ? { display: "inherit" } : { display: "none" }}><button id="cadastro" style={token == '' || token == null || token == undefined ? { display: "" } : { display: "none" }}>Cadastre-se</button></a>
+                    <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">{token === '' || token === null || token === undefined ? 'Login' : 'Ir para o perfil'}</a>
+                    <a href="/cadastrar" style={token === '' || token === null || token === undefined ? { display: "inherit" } : { display: "none" }}><button id="cadastro" style={token === '' || token === null || token === undefined ? { display: "" } : { display: "none" }}>Cadastre-se</button></a>
                 </div>
             </div>
             <main id="main-page-artigo">
