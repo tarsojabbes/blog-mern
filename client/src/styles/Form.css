@@ -165,3 +165,65 @@ input:focus{
   align-items: center;
 }
 
+
+@media (max-width: 1200px){
+  #background p {
+    font-size: 24px;
+  }
+
+  #card-cadastro {
+    width: 80%;
+    height: 50vh;
+  }
+
+  label {
+    font-size: 14px;
+  }
+  input {
+    width: 100%;
+    height: 25px;
+  }
+
+  #form {
+    width: 100%;
+  }
+
+  #div-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #form button {
+    width: 70%;
+    font-size: 16px;
+    text-align: center;
+    padding: 0;
+  }
+
+  #call-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #call-login p{
+    font-size: 16px;
+    width: 80%;
+    text-align: center;
+  }
+
+  #call-login p a{
+    font-size: 16px;
+  }
+
+  #div-btn-voltar {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  #btn-voltar {
+    height: 25px;
+  }
+}
