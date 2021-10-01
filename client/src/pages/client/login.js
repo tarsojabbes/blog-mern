@@ -57,7 +57,7 @@ export default function Cadastro() {
                 </a>
             </div>
             <p>Entre no TellMe</p>
-            <div id="card-cadastro">
+            <div id="card-cadastro-login" >
                 <div id="form">
                     <label>Email</label>
                     <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />

@@ -32,7 +32,7 @@
     }
   } 
 
-#card-cadastro {
+#card-cadastro, #card-cadastro-login {
     height: fit-content;
     width: 30%;
     background-color: #FFF;
@@ -226,5 +226,10 @@ input:focus{
 
   #btn-voltar {
     height: 25px;
+  }
+
+  #card-cadastro-login{
+    width: 80%;
+    height: 30vh;
   }
 }
