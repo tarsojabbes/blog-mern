@@ -12,8 +12,6 @@ export default function WAuth({ component: Component, ...rest }) {
     useEffect(() => {
         async function verify() {
             const res = await api.get('/api/usuarios/checktoken', { params: { token: getToken() } })
-            console.log(getToken())
-            console.log(res)
 
             if (res.config.params.token === undefined || res.config.params.token === null) {
                 setLoading(false)

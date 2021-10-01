@@ -3,7 +3,7 @@ import api from '../../services/api'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { login, setIdUsuario, setNomeUsuario } from '../../services/auth'
 
-export default function Cadastro() {
+export default function Login() {
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
