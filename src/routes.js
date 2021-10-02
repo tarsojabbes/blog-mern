@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'production') {
     routes.use(express.static('client/build'));
 
     routes.get('*', (request, response) => {
-        response.sendFile(path.resolve('C:/Users/Usuario/Desktop/blog-mern/client/public', 'index.html'));
+        response.sendFile(path.resolve('Users/Usuario/Desktop/blog-mern/client/public', 'index.html'));
     });
 }
 
