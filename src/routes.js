@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'production') {
     routes.use(express.static('client/public/index.html'));
 
     routes.get('*', (request, response) => {
-        response.sendFile(path.join('../client/public', '/index.html'));
+        response.sendFile('../client/public/index.html');
     });
 }
 
