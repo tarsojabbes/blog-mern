@@ -3,9 +3,7 @@ const routes = express.Router()
 const Usuario = require('./controllers/usuario.controller')
 const Post = require('./controllers/post.controllers')
 
-routes.get('/', (req, res) => {
-    res.sendFile('C:/Users/Usuario/Desktop/blog-mern/client/public', 'index.html')
-})
+app.use(express.static('public'))
 
 // CRUD Usuários
 routes.get('/api/usuarios', Usuario.index)
