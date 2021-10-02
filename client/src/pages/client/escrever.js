@@ -7,10 +7,19 @@ export default function Artigo() {
     const [titulo, setTitulo] = useState('')
     const [conteudo, setConteudo] = useState('')
     const [criador, setCriador] = useState('')
+    const [visibility, setVisibility] = useState(false)
     const token = getToken()
 
     useEffect(() => {
         setCriador(getIdUsuario())
+
+        function updateSize() {
+            if (window.screen.width > 1200) {
+                setVisibility(false)
+            }
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
     }, [])
 
     async function handleSubmit() {
@@ -34,10 +43,11 @@ export default function Artigo() {
                 <div id="tellme">
                     <a href="/"><p>TellMe</p></a>
                 </div>
-                <div id="links-landing">
+                <div id="links-landing-escrever">
                     <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">{token === '' || token === null || token === undefined ? 'Login' : 'Ir para o perfil'}</a>
                 </div>
             </div>
+
             <main id="main-page-artigo">
                 <header id="header-escrita-artigo">
                     <input id="titulo-escrita" value={titulo} name="titulo" placeholder="Título do artigo" onChange={(e) => setTitulo(e.target.value)} />

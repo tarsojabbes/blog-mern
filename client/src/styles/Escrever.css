@@ -8,6 +8,17 @@
     padding-top: 100px;
 
 }
+ #links-landing-escrever {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width:fit-content;
+ }
+
 
 #header-escrita-artigo {
     width: 45%;
@@ -123,3 +134,33 @@
       opacity: 1;
     }
   }
+
+@media (max-width: 1200px){
+  #main-page-artigo {
+    padding-top: 50px;
+  }
+
+  #header-escrita-artigo {
+    width: 80%;
+  }
+
+  #header-escrita-artigo #titulo-escrita {
+    height: 60px;
+    font-size: 20px;
+  }
+
+  #header-escrita-artigo #criador {
+    font-size: 16px;
+  }
+
+  #div-escrita-artigo {
+    width: 100%;
+  }
+
+  #div-escrita-artigo textarea {
+    width: 80%;
+    padding: 15px;
+    min-height: 50vh;
+    font-size: 16px;
+  }
+}
