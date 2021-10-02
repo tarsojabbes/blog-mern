@@ -201,4 +201,13 @@ main h2 {
     line-height: normal;
   }
 
+  main h2 {
+    padding: 100px 30px 30px 30px;
+    font-size: 20px;
+  }
+
+  #card-artigo-perfil button {
+    width: 70px
+  }
+
 }
