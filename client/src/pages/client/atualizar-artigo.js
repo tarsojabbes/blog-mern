@@ -44,7 +44,7 @@ export default function Artigo() {
                 <div id="tellme">
                     <a href="/"><p>TellMe</p></a>
                 </div>
-                <div id="links-landing">
+                <div id="links-landing-escrever">
                     <a href={token !== '' || token !== null || token !== undefined ? '/perfil/' + getIdUsuario() : '/login'} id="link">{token === '' || token === null || token === undefined ? 'Login' : 'Ir para o perfil'}</a>
                 </div>
             </div>
