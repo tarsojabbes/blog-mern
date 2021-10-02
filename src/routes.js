@@ -6,13 +6,9 @@ const path = require('path')
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
-    routes.use(express.static('client/public/index.html'));
+    routes.use(express.static('client/build'));
 
-    routes.get('*', (request, response) => {
-        response.sendFile('../client/public/index.html');
-    });
 }
-
 // CRUD Usuários
 routes.get('/api/usuarios', Usuario.index)
 routes.get('/api/usuarios.details/:_id', Usuario.getUser)
