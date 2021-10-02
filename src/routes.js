@@ -4,7 +4,7 @@ const Usuario = require('./controllers/usuario.controller')
 const Post = require('./controllers/post.controllers')
 
 routes.get('/', (req, res) => {
-    res.sendFile('client/public/index.html' , { root : __dirname})
+    res.sendFile('../client/public/index.html')
 })
 
 // CRUD Usuários
