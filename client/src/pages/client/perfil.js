@@ -6,6 +6,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 export default function Perfil() {
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(true)
+    const [visibility, setVisibility] = useState(false)
+    const [nome, setNome] = useState('')
 
     const handleLimite = (texto) => {
         let textoLimite = texto.slice(0, 250)
@@ -35,6 +37,8 @@ export default function Perfil() {
         }
     }
 
+
+
     useEffect(() => {
         async function getPostsUsuario() {
             const response = await api.get('/api/posts/' + getIdUsuario())
@@ -45,19 +49,46 @@ export default function Perfil() {
             () => getPostsUsuario(), 1500
         )
 
+        function updateSize() {
+            if (window.screen.width > 1200) {
+                setVisibility(false)
+            }
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+
+        function nomeReduzido(nome) {
+            let nomeRed = getNomeUsuario().split(' ')
+            setNome(nomeRed[0])
+
+        }
+        nomeReduzido(getNomeUsuario())
+
+
+
     }, [])
     return (
         <>
             <nav>
                 <header>
-                    Olá, {getNomeUsuario()}!
+                    Olá, {nome}!
                 </header>
                 <div id="links-perfil">
                     <a href={'/perfil/' + getIdUsuario() + '/atualizar'}>Editar perfil</a>
                     <a href={'/perfil/' + getIdUsuario() + '/escrever'}>Escrever</a>
                     <a><button onClick={confirmSair}>Sair</button></a>
                 </div>
+                <div id="dropdown">
+                    <button onClick={() => setVisibility(!visibility)}><img src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2013/png/iconmonstr-menu-1.png&r=14&g=124&b=217" alt="menu" /></button>
+                </div>
             </nav>
+            {visibility ? (
+                <div id="links-perfil-dropdown">
+                    <a id="link" href={'/perfil/' + getIdUsuario() + '/atualizar'}>Editar perfil</a>
+                    <a id="link" href={'/perfil/' + getIdUsuario() + '/escrever'}>Escrever</a>
+                    <a id="link"><button onClick={confirmSair}>Sair</button></a>
+                </div>
+            ) : ""}
             <main>
                 <h2>Aqui estão os seus artigos</h2>
                 <div id="grid-cards">
