@@ -20,6 +20,5 @@ app.use(express.json())
 app.use(routes)
 
 app.listen(PORT, LOCAL_ADDRESS, () => {
-    const address = app.address()
-    console.log('>> Servidor está rodando em', address)
+    console.log('>> Servidor está rodando')
 })
