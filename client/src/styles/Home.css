@@ -326,7 +326,7 @@ code {
     grid-template-rows: fit-content;
     grid-auto-rows: fit-content;
     grid-auto-columns: 80vw;
-    row-gap: 40px;
+    gap: 100px;
   }
 
   #card-artigo {
