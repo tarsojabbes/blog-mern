@@ -2,6 +2,7 @@ const express = require('express')
 const routes = express.Router()
 const Usuario = require('./controllers/usuario.controller')
 const Post = require('./controllers/post.controllers')
+const path = require('path')
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
