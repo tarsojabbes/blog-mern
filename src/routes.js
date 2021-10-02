@@ -6,7 +6,8 @@ const path = require('path')
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
-    routes.use(express.static('client/build'));
+    routes.use('/', express.static('client/build'));
+    routes.use('*', express.static('client/build'));
 
 }
 // CRUD Usuários
