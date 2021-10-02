@@ -6,10 +6,10 @@ const path = require('path')
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
-    routes.use(express.static('client/build'));
+    routes.use(express.static('client/public/index.html'));
 
     routes.get('*', (request, response) => {
-        response.sendFile(path.join('C:/Users/Usuario/Desktop/blog-mern/client/public', '/index.html'));
+        response.sendFile(path.join('../client/public', '/index.html'));
     });
 }
 
