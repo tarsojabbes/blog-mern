@@ -6,8 +6,7 @@ const cookieParser = require('cookie-parser')
 const app = express()
 const routes = require('./src/routes')
 const { LOCAL_ADDRESS = '0.0.0.0' } = process.env
-
-export const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000
 
 mongoose.connect('mongodb+srv://root:050386999@cluster0.cqr2w.mongodb.net/blog-mern?retryWrites=true&w=majority', (err) => {
     if (err) {
