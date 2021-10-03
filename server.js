@@ -22,6 +22,6 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(routes)
 
-app.listen(PORT, "127.0.0.1", () => {
+app.listen(PORT, () => {
     console.log('>> Servidor está rodando')
 })
