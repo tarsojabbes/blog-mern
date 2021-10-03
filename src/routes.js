@@ -4,6 +4,14 @@ const Usuario = require('./controllers/usuario.controller')
 const Post = require('./controllers/post.controllers')
 const path = require('path')
 
+routes.all('*', function (req, res, next) {
+    var origin = req.get('origin');
+    res.header('Access-Control-Allow-Origin', origin);
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
     routes.use('/', express.static('client/build'));
