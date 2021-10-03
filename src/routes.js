@@ -3,14 +3,9 @@ const routes = express.Router()
 const Usuario = require('./controllers/usuario.controller')
 const Post = require('./controllers/post.controllers')
 const path = require('path')
+const cors = require('cors')
 
-routes.all('*', function (req, res, next) {
-    var origin = req.get('origin');
-    res.header('Access-Control-Allow-Origin', origin);
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
+routes.use(cors())
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
