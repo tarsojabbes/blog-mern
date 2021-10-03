@@ -58,8 +58,11 @@ export default function Perfil() {
         updateSize();
 
         function nomeReduzido(nome) {
-            let nomeRed = getNomeUsuario().split(' ')
-            setNome(nomeRed[0])
+            if (getNomeUsuario() !== null) {
+                let nomeRed = getNomeUsuario().split(' ')
+                setNome(nomeRed[0])
+            }
+
 
         }
         nomeReduzido(getNomeUsuario())
