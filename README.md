@@ -1,6 +1,6 @@
 # TellMe #
 ## Compartilhe ideias, semeie conhecimento ###
----
+
 Este projeto foi finalizado, mas ainda aceita mudanças! A proposta abordada é criar um blog de compartilhamento de experiências no qual o usuário
 pode se cadastrar e escrever artigos que julgue importantes e que sejam de interesse geral. No processo de desenvolvimento foram
 utilizadas as seguintes ferramentas e tecnologias: React.js + Bootstrap + MaterialUI para a construção do Front-end e Node.js + Express.js
